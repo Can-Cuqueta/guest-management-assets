@@ -22,7 +22,7 @@ header {
     height: auto; /* Maintains the aspect ratio */
     display: block; /* Ensures the image is centered */
     margin: 0 auto; /* Centers the image horizontally */
-    max-height: 100px; /* Adjust this value to control the maximum height */
+    max-height: 300px; /* Adjust this value to control the maximum height */
 }
 
 /* Table Styles */
