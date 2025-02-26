@@ -1,0 +1,2 @@
+# guest-management-assets
+ 
