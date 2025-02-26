@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Management</title>
+    <link rel="stylesheet" href="https://6375fe28.guest-information-project.pages.dev/styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <img src="https://6375fe28.guest-information-project.pages.dev/header.jpg" alt="Header Image" style="width: 100%;">
+    <h1>Guest List.....</h1>
+    <table id="guestTable" class="display">
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Arrival</th>
+                <th>Departure</th>
+                <th>Guest Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+      // Use the deployment URL passed from the server-side
+      let url = '<?= deploymentUrl ?>?type=data';
+      console.log("Fetch from: ->", url);
+
+      fetch(url)
+        .then(response => {
+          console.log("Raw Response: --------->>>>>", response);
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json(); // Directly parse JSON if the response is valid
+        })
+        .then(data => {
+          console.log("Parsed Data:", data);
+          createTable(data); // Pass the parsed data to createTable
+        })
+        .catch(error => {
+          console.error("Error fetching or parsing data:", error);
+        });
+
+      // Initialize DataTable
+      function createTable(data) {
+        data.forEach(row => {
+          row.Arrival = new Date(row.Arrival).toLocaleDateString();
+          row.Departure = new Date(row.Departure).toLocaleDateString();
+        });
+
+        $("#guestTable").DataTable({
+          data: data,
+          columns: [
+            { data: 'Reference', title: 'Reference' },
+            { data: 'Arrival', title: 'Arrival' },
+            { data: 'Departure', title: 'Departure' },
+            { data: '1 - Name', title: 'Guest Name' },
+            {
+              data: null,
+              title: 'Action',
+              render: function (data, type, row) {
+                return `<a href='/Guest_Management/templates/edit_guest_info.html?ref=${row.Reference}' class='modify-btn'>Modify</a>`;
+              }
+            }
+          ],
+          pageLength: 10
+        });
+      }
+    </script>
+</body>
+</html>
