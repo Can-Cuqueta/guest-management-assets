@@ -1,9 +1,10 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: Quicksand, serif;
+    background-color: #fffffc; /* Light cream background */
     margin: 0;
     padding: 20px;
+    color: #5c3a21; /* Dark brown for text */
     text-align: center;
 }
 
@@ -18,11 +19,103 @@ header {
 
 /* Header Image */
 .header-image {
-    max-width: 100%; /* Ensures the image doesn't exceed the width of its container */
-    height: auto; /* Maintains the aspect ratio */
-    display: block; /* Ensures the image is centered */
-    margin: 0 auto; /* Centers the image horizontally */
-    max-height: 300px; /* Adjust this value to control the maximum height */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: 300px;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff8e7; /* Brighter cream for the form container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titles */
+h1, h2, h3 {
+    font-family: 'Brush Script MT', cursive;
+    font-weight: bold;
+    color: #8b5a2b; /* Warm brown for titles */
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Labels and Input Fields */
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5c3a21;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d2b48c;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #5c3a21;
+}
+
+/* Address Fields (Less Wide) */
+#guestDetails input[type="text"] {
+    width: 80%;
+}
+
+/* Buttons */
+.nav-button, .save-button, .delete-button, .modify-btn {
+    background-color: #a0522d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover, .save-button:hover, .delete-button:hover, .modify-btn:hover {
+    background-color: #8b4513;
+}
+
+/* Guest Details Section */
+#guestDetails {
+    padding: 20px;
+    background-color: #fff8e7;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Checkbox Styles */
+.use-main-address {
+    margin-bottom: 15px;
 }
 
 /* Table Styles */
@@ -43,21 +136,6 @@ th {
     background-color: #007bff;
     color: white;
     cursor: pointer;
-}
-
-/* Modify Button */
-.modify-btn {
-    background-color: #28a745;
-    color: white;
-    padding: 6px 12px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.modify-btn:hover {
-    background-color: #218838;
 }
 
 /* Table Row Hover Effect */
