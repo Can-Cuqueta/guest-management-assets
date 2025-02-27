@@ -83,7 +83,7 @@ input[type="email"] {
 }
 
 /* Address Fields (Less Wide) */
-#guestDetails input[type="text"] {
+#guestDetails input {
     width: 80%;
 }
 
