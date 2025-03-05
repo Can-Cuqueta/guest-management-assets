@@ -188,6 +188,8 @@ tbody tr:hover {
     }
 }
 
+
+
 /* Reservation Details Section */
 .reservation-details {
     margin-bottom: 20px;
@@ -209,32 +211,26 @@ tbody tr:hover {
     flex-direction: column;
     justify-content: center; /* Center content vertically */
 }
-.reservation-field label {
-    font-size: 16px;
-    font-weight: bold;
-    color: #5c3a21;
-    margin-bottom: 5px;
-}
 
 /* Adjust widths for specific fields */
 .reservation-field#reference {
-    flex: 0 0 40%; /* 60% less wide (40% of original width) */
+    width: 40%; /* 60% less wide (40% of original width) */
     text-align: center; /* Center text */
 }
 
 .reservation-field#guestName {
-    flex: 0 0 60%; /* 40% less wide (60% of original width) */
+    width: 60%; /* 40% less wide (60% of original width) */
     text-align: right; /* Align text to the right */
 }
 
 .reservation-field#arrival,
 .reservation-field#departure {
-    flex: 0 0 50%; /* Half as wide */
+    width: 50%; /* Half as wide */
     text-align: center; /* Center text */
 }
 
 .reservation-field#numberOfGuests {
-    flex: 0 0 15%; /* 15% of original width */
+    width: 15%; /* 15% of original width */
     text-align: center; /* Center text */
 }
 
@@ -249,6 +245,8 @@ tbody tr:hover {
     color: #5c3a21;
     text-align: inherit; /* Inherit text alignment from parent */
 }
+
+
 
 /* Icon Styles */
 .reservation-field label i {
@@ -276,6 +274,8 @@ tbody tr:hover {
     flex: 1; /* Equal width for arrival, departure, and number of guests */
 }
 
+
+
 /* Responsive Design for Smaller Screens */
 @media (max-width: 600px) {
     .reservation-row {
@@ -295,6 +295,8 @@ tbody tr:hover {
         margin-right: 5px; /* Reduce space between icon and text */
     }
 }
+
+
 
 /* Validation Styles */
 .reservation-field input:invalid {
