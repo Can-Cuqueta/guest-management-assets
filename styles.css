@@ -71,7 +71,9 @@ label {
 input[type="text"],
 input[type="date"],
 input[type="number"],
-input[type="email"] {
+input[type="email"],
+input[type="tel"],
+select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -80,25 +82,12 @@ input[type="email"] {
     background-color: #fff;
     font-size: 16px;
     color: #5c3a21;
+    box-sizing: border-box;
 }
 
 /* Address Fields (Less Wide) */
 #guestDetails input {
     width: 80%;
-}
-
-/* Style for all input fields, including dropdowns and telephone inputs */
-#guestDetails input[type="text"],
-#guestDetails input[type="tel"],
-#guestDetails input[type="email"],
-#guestDetails input[type="date"],
-#guestDetails select {
-    width: 80%; /* Match the width of other input fields */
-    padding: 8px; /* Add padding for better appearance */
-    font-size: 16px; /* Match the font size of other input fields */
-    border: 1px solid #ccc; /* Add a border for consistency */
-    border-radius: 4px; /* Add rounded corners */
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
 /* Style for dropdowns (select elements) */
@@ -295,7 +284,6 @@ tbody tr:hover {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-
 /* Guest Details Section */
 .guest-details {
     padding: 20px;
@@ -337,47 +325,6 @@ tbody tr:hover {
     box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
-/* Adjust widths for specific fields */
-.guest-field#guest${index}_name {
-    flex: 0 0 40%; /* 40% width */
-}
-
-.guest-field#guest${index}_gender {
-    flex: 0 0 30%; /* 30% width */
-}
-
-.guest-field#guest${index}_birthdate {
-    flex: 0 0 30%; /* 30% width */
-}
-
-.guest-field#guest${index}_idType {
-    flex: 0 0 25%; /* 25% width */
-}
-
-.guest-field#guest${index}_idCountry {
-    flex: 0 0 25%; /* 25% width */
-}
-
-.guest-field#guest${index}_idNumber {
-    flex: 0 0 25%; /* 25% width */
-}
-
-.guest-field#guest${index}_telephone {
-    flex: 0 0 25%; /* 25% width */
-}
-
-.guest-field#guest${index}_city {
-    flex: 0 0 40%; /* 40% width */
-}
-
-.guest-field#guest${index}_zip {
-    flex: 0 0 30%; /* 30% width */
-}
-
-.guest-field#guest${index}_country {
-    flex: 0 0 30%; /* 30% width */
-}
-
 /* Checkbox Styles */
 .use-main-address {
     margin-bottom: 15px;
@@ -412,8 +359,6 @@ tbody tr:hover {
 .nav-icon:hover {
     color: #8b4513; /* Darker color on hover */
 }
-
-
 
 /* Raised Button Styles with Gradient */
 .nav-button, .save-button, .delete-button, .modify-btn {
@@ -451,80 +396,11 @@ tbody tr:hover {
     transform: translateY(0); /* Reset button position on click */
 }
 
-
-/* Guest Details Section */
-.guest-details {
-    padding: 20px;
-    background-color: #e6d8b5; /* Same as reservation details background */
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Add text to Next/Previous buttons */
+.nav-button::after {
+    content: " Next";
 }
 
-.guest-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px; /* Space between fields */
-    margin-bottom: 15px;
-}
-
-.guest-field {
-    display: flex;
-    flex-direction: column;
-}
-
-.guest-field label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #5c3a21;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.guest-field input,
-.guest-field select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #d2b48c;
-    border-radius: 5px;
-    background-color: #fff;
-    font-size: 14px;
-    color: #5c3a21;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-}
-
-/* Checkbox Styles */
-.use-main-address {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.use-main-address label {
-    font-size: 14px;
-    color: #5c3a21;
-    cursor: pointer;
-}
-
-.use-main-address input[type="checkbox"] {
-    margin-right: 8px;
-    cursor: pointer;
-}
-
-/* Navigation Icons */
-.guest-navigation {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.nav-icon {
-    font-size: 32px; /* Larger icons */
-    color: #a0522d;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-icon:hover {
-    color: #8b4513; /* Darker color on hover */
-    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+#prevGuest.nav-button::after {
+    content: " Previous";
 }
