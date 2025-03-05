@@ -295,14 +295,18 @@ tbody tr:hover {
 
 .guest-row {
     display: flex;
-    flex-wrap: wrap;
+    
+
+    flex-wrap: nowrap; /* Ensure fields stay on the same row */
+
     gap: 15px; /* Space between fields */
     margin-bottom: 15px;
 }
 
 .guest-field {
     flex: 1; /* Allow fields to grow and fill available space */
-    min-width: 150px; /* Minimum width for each field */
+    min-width: 120px; /* Minimum width for each field */
+    
 }
 
 .guest-field label {
