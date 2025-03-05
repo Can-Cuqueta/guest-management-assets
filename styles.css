@@ -121,8 +121,6 @@ input[type="email"] {
     padding-left: 48px; /* Add padding for the country code dropdown */
 }
 
-
-
 /* Buttons */
 .nav-button, .save-button, .delete-button, .modify-btn {
     background-color: #a0522d;
@@ -188,8 +186,6 @@ tbody tr:hover {
     }
 }
 
-
-
 /* Reservation Details Section */
 .reservation-details {
     margin-bottom: 20px;
@@ -246,8 +242,6 @@ tbody tr:hover {
     text-align: inherit; /* Inherit text alignment from parent */
 }
 
-
-
 /* Icon Styles */
 .reservation-field label i {
     margin-right: 8px; /* Space between icon and text */
@@ -258,23 +252,6 @@ tbody tr:hover {
 .reservation-field input {
     padding-left: 30px; /* Add padding to prevent text from overlapping icons */
 }
-
-/* Adjust the width of specific fields if needed */
-.reservation-field#reference {
-    flex: 1;
-}
-
-.reservation-field#guestName {
-    flex: 2; /* Give more space to the guest name field */
-}
-
-.reservation-field#arrival,
-.reservation-field#departure,
-.reservation-field#numberOfGuests {
-    flex: 1; /* Equal width for arrival, departure, and number of guests */
-}
-
-
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 600px) {
@@ -295,8 +272,6 @@ tbody tr:hover {
         margin-right: 5px; /* Reduce space between icon and text */
     }
 }
-
-
 
 /* Validation Styles */
 .reservation-field input:invalid {
@@ -319,4 +294,3 @@ tbody tr:hover {
     transform: scale(1.1); /* Slightly enlarge the icon */
     transition: color 0.3s ease, transform 0.3s ease;
 }
-
