@@ -208,24 +208,24 @@ tbody tr:hover {
     justify-content: center; /* Center content vertically */
 }
 
-/* Adjust widths for specific fields */
-.reservation-field#reference {
+/* Field-specific styles with increased specificity */
+.reservation-field#reference input {
     width: 40%; /* 60% less wide (40% of original width) */
     text-align: center; /* Center text */
 }
 
-.reservation-field#guestName {
+.reservation-field#guestName input {
     width: 60%; /* 40% less wide (60% of original width) */
     text-align: right; /* Align text to the right */
 }
 
-.reservation-field#arrival,
-.reservation-field#departure {
+.reservation-field#arrival input,
+.reservation-field#departure input {
     width: 50%; /* Half as wide */
     text-align: center; /* Center text */
 }
 
-.reservation-field#numberOfGuests {
+.reservation-field#numberOfGuests input {
     width: 15%; /* 15% of original width */
     text-align: center; /* Center text */
 }
