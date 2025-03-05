@@ -450,3 +450,81 @@ tbody tr:hover {
         0 1px 2px rgba(0, 0, 0, 0.1); /* Additional shadow for depth */
     transform: translateY(0); /* Reset button position on click */
 }
+
+
+/* Guest Details Section */
+.guest-details {
+    padding: 20px;
+    background-color: #e6d8b5; /* Same as reservation details background */
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between fields */
+    margin-bottom: 15px;
+}
+
+.guest-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.guest-field label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #5c3a21;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.guest-field input,
+.guest-field select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d2b48c;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #5c3a21;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Checkbox Styles */
+.use-main-address {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.use-main-address label {
+    font-size: 14px;
+    color: #5c3a21;
+    cursor: pointer;
+}
+
+.use-main-address input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Navigation Icons */
+.guest-navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-icon {
+    font-size: 32px; /* Larger icons */
+    color: #a0522d;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-icon:hover {
+    color: #8b4513; /* Darker color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
