@@ -187,3 +187,56 @@ tbody tr:hover {
         display: block;
     }
 }
+
+/* Reservation Details Section */
+.reservation-details {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff8e7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between fields */
+    margin-bottom: 10px;
+}
+
+.reservation-field {
+    flex: 1; /* Allow fields to grow and fill available space */
+    min-width: 150px; /* Minimum width for each field */
+}
+
+.reservation-field label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #5c3a21;
+    margin-bottom: 5px;
+}
+
+.reservation-field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d2b48c;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #5c3a21;
+}
+
+/* Adjust the width of specific fields if needed */
+.reservation-field#reference {
+    flex: 1;
+}
+
+.reservation-field#guestName {
+    flex: 2; /* Give more space to the guest name field */
+}
+
+.reservation-field#arrival,
+.reservation-field#departure,
+.reservation-field#numberOfGuests {
+    flex: 1; /* Equal width for arrival, departure, and number of guests */
+}
