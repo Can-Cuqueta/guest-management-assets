@@ -226,6 +226,17 @@ tbody tr:hover {
     color: #5c3a21;
 }
 
+/* Icon Styles */
+.reservation-field label i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #8b5a2b; /* Match the warm brown color used for titles */
+}
+
+/* Adjust input padding to accommodate icons */
+.reservation-field input {
+    padding-left: 30px; /* Add padding to prevent text from overlapping icons */
+}
+
 /* Adjust the width of specific fields if needed */
 .reservation-field#reference {
     flex: 1;
@@ -240,3 +251,46 @@ tbody tr:hover {
 .reservation-field#numberOfGuests {
     flex: 1; /* Equal width for arrival, departure, and number of guests */
 }
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+    .reservation-row {
+        flex-direction: column; /* Stack fields vertically */
+    }
+
+    .reservation-field {
+        width: 100%; /* Full width for stacked fields */
+        margin-bottom: 10px; /* Space between stacked fields */
+    }
+
+    .reservation-field input {
+        padding-left: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .reservation-field label i {
+        margin-right: 5px; /* Reduce space between icon and text */
+    }
+}
+
+/* Validation Styles */
+.reservation-field input:invalid {
+    border-color: #ff6b6b; /* Red border for invalid fields */
+    background-color: #fff5f5; /* Light red background for invalid fields */
+}
+
+.reservation-field input:focus:invalid {
+    box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); /* Red glow for focused invalid fields */
+}
+
+.reservation-field input:valid {
+    border-color: #4caf50; /* Green border for valid fields */
+    background-color: #f5fff5; /* Light green background for valid fields */
+}
+
+/* Hover Effects for Icons */
+.reservation-field label i:hover {
+    color: #a0522d; /* Darker brown on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
