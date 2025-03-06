@@ -151,13 +151,13 @@ table {
 
 th, td {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #c6aeae;
     text-align: center;
 }
 
 th {
-    background-color: #007bff;
-    color: white;
+    background-color: #e6d8b5;
+    color: black;
     cursor: pointer;
 }
 
