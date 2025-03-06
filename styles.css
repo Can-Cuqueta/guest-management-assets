@@ -38,7 +38,7 @@ header {
 
 /* Titles */
 h1, h2, h3 {
-    font-family: 'Brush Script MT', cursive;
+    font-family: caveat, serif;
     font-weight: bold;
     color: #8b5a2b; /* Warm brown for titles */
     text-align: center;
