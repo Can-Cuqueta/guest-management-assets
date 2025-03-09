@@ -365,7 +365,7 @@ tbody tr:hover {
 }
 
 /* Raised Button Styles with Gradient */
-.nav-button, .save-button, .delete-button, .modify-btn {
+.nav-button, .save-button, .delete-button, .modify-btn, .cancel-button {
     background: linear-gradient(to bottom, #a0522d, #8b4513); /* Gradient for lighting effect */
     color: white;
     padding: 10px 20px;
@@ -383,7 +383,7 @@ tbody tr:hover {
 }
 
 /* Hover effect for raised buttons */
-.nav-button:hover, .save-button:hover, .delete-button:hover, .modify-btn:hover {
+.nav-button:hover, .save-button:hover, .delete-button:hover, .modify-btn:hover, .cancel-btn:hover {
     background: linear-gradient(to bottom, #8b4513, #6b2c0e); /* Darker gradient on hover */
     box-shadow: 
         0 6px 8px rgba(0, 0, 0, 0.15), /* Increase shadow on hover */
@@ -392,7 +392,7 @@ tbody tr:hover {
 }
 
 /* Active effect for raised buttons (when clicked) */
-.nav-button:active, .save-button:active, .delete-button:active, .modify-btn:active {
+.nav-button:active, .save-button:active, .delete-button:active, .modify-btn:active, .cancel-btn:active {
     background: linear-gradient(to bottom, #6b2c0e, #4a1c0a); /* Even darker gradient on click */
     box-shadow: 
         0 2px 4px rgba(0, 0, 0, 0.1), /* Reduce shadow on click */
