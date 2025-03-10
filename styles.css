@@ -449,6 +449,14 @@ tbody tr:hover {
     cursor: pointer;
 }
 
+.case-sensitive-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    color: #5c3a21;
+    font-weight: bold;
+}
 
 .dataTables_filter {
     display: none; /* Hides the default search box */
