@@ -408,3 +408,21 @@ tbody tr:hover {
 #prevGuest.nav-button::after {
     content: " Previous";
 }
+
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#searchInput,
+#columnSelect {
+    padding: 8px 12px;
+    border: 2px solid #a0522d;
+    border-radius: 5px;
+    background-color: #fff8e7;
+    color: #5c3a21;
+    width: 250px;
+}
