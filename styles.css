@@ -417,12 +417,36 @@ tbody tr:hover {
     margin-bottom: 15px;
 }
 
-#searchInput,
+.search-wrapper {
+    position: relative;
+    width: 250px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b4513;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 8px 30px; /* Space for the icon */
+    border: 2px solid #a0522d;
+    border-radius: 5px;
+    background-color: #fff8e7;
+    color: #5c3a21;
+}
+
 #columnSelect {
     padding: 8px 12px;
     border: 2px solid #a0522d;
     border-radius: 5px;
     background-color: #fff8e7;
     color: #5c3a21;
-    width: 250px;
+}
+
+.dataTables_filter {
+    display: none; /* Hides the default search box */
 }
