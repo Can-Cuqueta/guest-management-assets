@@ -440,12 +440,15 @@ tbody tr:hover {
 }
 
 #columnSelect {
+    width: 150px; /* Set a reasonable width */
     padding: 8px 12px;
     border: 2px solid #a0522d;
     border-radius: 5px;
     background-color: #fff8e7;
     color: #5c3a21;
+    cursor: pointer;
 }
+
 
 .dataTables_filter {
     display: none; /* Hides the default search box */
