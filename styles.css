@@ -68,6 +68,16 @@ label {
     margin-bottom: 5px;
 }
 
+input:valid {
+  border-color: #4caf50; /* Very light crean border-color for invalid fields */
+  background-color: #f5fff5; /* Light green background for invalid fields */
+}
+
+input:invalid {
+    border-color: #ff6b6b; /* Red border for invalid fields */
+    background-color: #fff5f5; /* Light red background for invalid fields */
+}
+
 
 input[type="text"],
 input[type="date"],
