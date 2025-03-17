@@ -568,12 +568,10 @@ tbody tr:hover {
 }
 
 
-/*********************/
-
 
 /* Reduce SweetAlert2 Popup Size */
 .swal2-popup {
-    max-width: 400px !important; /* Reduce width */
+    max-width: 350px !important; /* Reduce width */
     padding: 20px !important;     /* Less internal padding */
     font-size: 16px !important;   /* Reduce text size */
 }
@@ -589,4 +587,6 @@ tbody tr:hover {
     font-size: 14px !important;   /* Reduce button text size */
 }
 
+
+/*********************/
 
