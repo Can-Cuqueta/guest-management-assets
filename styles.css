@@ -472,3 +472,42 @@ tbody tr:hover {
 .dataTables_filter {
     display: none; /* Hides the default search box */
 }
+
+/* SweetAlert2 Custom Styling */
+.custom-popup {
+    background-color: #fff8e7; /* Brighter cream for popups */
+    color: #5c3a21; /* Dark brown text */
+    border: 2px solid #d2b48c; /* Tan border for a softer look */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.custom-title {
+    color: #8b5a2b; /* Warm brown for titles */
+    font-family: 'Caveat', serif;
+    font-size: 28px;
+}
+
+.custom-button {
+    background-color: #a0522d; /* Brown primary button */
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #8b4513; /* Darker brown on hover */
+}
+
+.custom-cancel-button {
+    background-color: #8b4513;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-cancel-button:hover {
+    background-color: #6b2c0e; /* Even darker brown on hover */
+}
