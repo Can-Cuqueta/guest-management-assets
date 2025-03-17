@@ -511,3 +511,62 @@ tbody tr:hover {
 .custom-cancel-button:hover {
     background-color: #6b2c0e; /* Even darker brown on hover */
 }
+
+/***   OVERWITE SweetAlert2 Defaults n***
+
+/* Force SweetAlert2 popups to match your theme */
+.swal2-popup {
+    background-color: #fff8e7 !important;  /* Brighter cream background */
+    color: #5c3a21 !important;             /* Dark brown text */
+    border: 2px solid #d2b48c !important;  /* Soft tan border */
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Override icon colors */
+.swal2-icon.swal2-success {
+    border-color: #4CAF50 !important;    /* Success green */
+    color: #4CAF50 !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: #ff6b6b !important;    /* Error red */
+    color: #ff6b6b !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #ffb74d !important;    /* Warning orange */
+    color: #ffb74d !important;
+}
+
+.swal2-icon.swal2-info {
+    border-color: #42a5f5 !important;    /* Info blue */
+    color: #42a5f5 !important;
+}
+
+/* Custom Button Styles */
+.swal2-confirm {
+    background-color: #a0522d !important;  /* Warm brown */
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+.swal2-cancel {
+    background-color: #8b4513 !important;  /* Darker brown */
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+.swal2-confirm:hover {
+    background-color: #8b4513 !important; /* Darker brown on hover */
+}
+
+.swal2-cancel:hover {
+    background-color: #6b2c0e !important; /* Even darker brown on hover */
+}
+
+
+/************
+
