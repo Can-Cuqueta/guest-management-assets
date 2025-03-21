@@ -247,12 +247,10 @@ tbody tr:hover {
 
 
 #numberOfGuests {
-    width: 10% !important; /* Much smaller to hold 3 digits */
-    text-align: center; /* Center text */
+    width: 10% !important;
+    text-align: center !important;
+    background-color: red !important; /* Add a visible change for testing */
 }
-
-
-
 
 
 
