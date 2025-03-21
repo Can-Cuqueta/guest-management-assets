@@ -249,13 +249,6 @@ tbody tr:hover {
     text-align: center; /* Center text */
 }
 
-.reservation-field select#gender {
-    width: 40%; /* Less than half the width */
-}
-
-.reservation-field input#birthdate {
-    width: 60%; /* Reduced by 20% (from 80% to 60%) */
-}
 
 .reservation-field input#numberOfGuests[type="number"] {
     width: 10%; /* Much smaller to hold 3 digits */
