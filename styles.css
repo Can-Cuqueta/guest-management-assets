@@ -78,6 +78,7 @@ input:invalid {
     background-color: #fff5f5; /* Light red background for invalid fields */
 }
 
+
 input[type="text"],
 input[type="date"],
 input[type="number"],
@@ -209,7 +210,7 @@ tbody tr:hover {
 
 /* Field-specific styles with increased specificity */
 .reservation-field#reference input {
-    width: 60%; /* Reduced by 20% (from 80% to 60%) */
+    width: 40%; /* 60% less wide (40% of original width) */
     text-align: center; /* Center text */
 }
 
@@ -218,22 +219,15 @@ tbody tr:hover {
     text-align: right; /* Align text to the right */
 }
 
-.reservation-field#dateRange input {
-    width: 60%; /* Increased by 20% (from 50% to 60%) */
+.reservation-field#arrival input,
+.reservation-field#departure input {
+    width: 50%; /* Half as wide */
     text-align: center; /* Center text */
 }
 
 .reservation-field#numberOfGuests input {
-    width: 15%; /* Much smaller to hold 3 digits */
+    width: 15%; /* 15% of original width */
     text-align: center; /* Center text */
-}
-
-.reservation-field#gender select {
-    width: 40%; /* Less than half the width */
-}
-
-.reservation-field#birthdate input {
-    width: 60%; /* Reduced by 20% (from 80% to 60%) */
 }
 
 /* Ensure inputs take full width of their container */
@@ -312,7 +306,10 @@ tbody tr:hover {
 
 .guest-row {
     display: flex;
+    
+
     flex-wrap: nowrap; /* Ensure fields stay on the same row */
+
     gap: 15px; /* Space between fields */
     margin-bottom: 15px;
 }
@@ -320,6 +317,7 @@ tbody tr:hover {
 .guest-field {
     flex: 1; /* Allow fields to grow and fill available space */
     min-width: 120px; /* Minimum width for each field */
+    
 }
 
 .guest-field label {
@@ -422,6 +420,7 @@ tbody tr:hover {
     content: " Previous";
 }
 
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -519,17 +518,6 @@ tbody tr:hover {
 .swal2-popup {
     background-color: #fff8e7 !important;  /* Brighter cream background */
     color: #5c3a21 !important;             /* Dark brown text */
-
-
-
-
-
-/***   OVERWITE SweetAlert2 Defaults n***
-
-/* Force SweetAlert2 popups to match your theme */
-.swal2-popup {
-    background-color: #fff8e7 !important;  /* Brighter cream background */
-    color: #5c3a21 !important;             /* Dark brown text */
     border: 2px solid #d2b48c !important;  /* Soft tan border */
     border-radius: 12px !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
@@ -601,3 +589,4 @@ tbody tr:hover {
 }
 
 /*********************/
+
