@@ -248,6 +248,10 @@ tbody tr:hover {
 
 
 
+
+
+
+
 /* General rule for reservation fields */
 .reservation-field input {
     width: 100%;
@@ -264,7 +268,19 @@ tbody tr:hover {
 .reservation-field#numberOfGuests input[type="number"] {
     width: 10%; /* Much smaller to hold 3 digits */
     text-align: center; /* Center text */
+    box-sizing: border-box; /* Include padding and border in the width */
+    -moz-appearance: textfield; /* Remove spinner arrows in Firefox */
 }
+
+/* Remove spinner arrows in Chrome, Safari, and Edge */
+#numberOfGuests::-webkit-outer-spin-button,
+#numberOfGuests::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
 
 
 
