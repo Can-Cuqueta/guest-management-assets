@@ -243,11 +243,14 @@ tbody tr:hover {
     width: 60%; /* Reduced by 20% (from 80% to 60%) */
 }
 
-/*****
 /* Ensure inputs take full width of their container */
+
+/*****
+
 .reservation-field input {
     width: 100%;
     padding: 8px;
+    padding-left: 30px;     
     border: 1px solid #d2b48c;
     border-radius: 5px;
     background-color: #fff;
@@ -275,10 +278,6 @@ tbody tr:hover {
     color: #8b5a2b; /* Match the warm brown color used for titles */
 }
 
-/* Adjust input padding to accommodate icons */
-.reservation-field input {
-    padding-left: 30px; /* Add padding to prevent text from overlapping icons */
-}
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 600px) {
