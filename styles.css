@@ -78,6 +78,7 @@ input:invalid {
     background-color: #fff5f5; /* Light red background for invalid fields */
 }
 
+
 input[type="text"],
 input[type="date"],
 input[type="number"],
@@ -224,16 +225,18 @@ tbody tr:hover {
 }
 
 .reservation-field#numberOfGuests input {
-    width: 15%; /* Much smaller to hold 3 digits */
+    width: 10%; /* Much smaller to hold 3 digits */
     text-align: center; /* Center text */
 }
 
 .reservation-field#gender select {
     width: 40%; /* Less than half the width */
+    text-align: center; /* Center text */
 }
 
 .reservation-field#birthdate input {
     width: 60%; /* Reduced by 20% (from 80% to 60%) */
+    text-align: center; /* Center text */
 }
 
 /* Ensure inputs take full width of their container */
@@ -519,17 +522,6 @@ tbody tr:hover {
 .swal2-popup {
     background-color: #fff8e7 !important;  /* Brighter cream background */
     color: #5c3a21 !important;             /* Dark brown text */
-
-
-
-
-
-/***   OVERWITE SweetAlert2 Defaults n***
-
-/* Force SweetAlert2 popups to match your theme */
-.swal2-popup {
-    background-color: #fff8e7 !important;  /* Brighter cream background */
-    color: #5c3a21 !important;             /* Dark brown text */
     border: 2px solid #d2b48c !important;  /* Soft tan border */
     border-radius: 12px !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
@@ -579,9 +571,6 @@ tbody tr:hover {
     background-color: #6b2c0e !important; /* Even darker brown on hover */
 }
 
-
-
-
 /* Reduce SweetAlert2 Popup Size */
 .swal2-popup {
     max-width: 350px !important; /* Reduce width */
@@ -599,5 +588,3 @@ tbody tr:hover {
     padding: 6px 15px !important; /* Smaller buttons */
     font-size: 14px !important;   /* Reduce button text size */
 }
-
-/*********************/
