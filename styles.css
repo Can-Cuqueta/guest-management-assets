@@ -258,7 +258,7 @@ tbody tr:hover {
     width: 60%; 
 }
 
-.reservation-field select#numberOfGuests {
+#guestForm .reservation-details .reservation-field select#numberOfGuests {
     width: 30%; 
     text-align: center;
     box-sizing: border-box;
