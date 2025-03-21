@@ -222,47 +222,52 @@ tbody tr:hover {
 
 
 /* General rule for reservation fields */
-.reservation-field input,
-.reservation-field select {
+.reservation-field input {
     width: 100%;
     padding: 8px;
     border: 1px solid #d2b48c;
     border-radius: 5px;
     background-color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     color: #5c3a21;
-    text-align: inherit; 
+    text-align: inherit; /* Inherit text alignment from parent */
 }
 
 /* Field-specific styles */
 .reservation-field input#reference {
-    width: 60%; 
-    text-align: center;
+    width: 60%; /* Reduced by 20% (from 80% to 60%) */
+    text-align: center; /* Center text */
 }
 
 .reservation-field input#guestName {
-    width: 80%; 
-    text-align: right;
+    width: 60%; /* 40% less wide (60% of original width) */
+    text-align: right; /* Align text to the right */
 }
 
 .reservation-field input#dateRange {
-    width: 100%; 
-    text-align: center;
+    width: 60%; /* Increased by 20% (from 50% to 60%) */
+    text-align: center; /* Center text */
 }
 
 .reservation-field select#gender {
-    width: 80%;
-    
+    width: 40%; /* Less than half the width */
+}
 
 .reservation-field input#birthdate {
-    width: 60%; 
+    width: 60%; /* Reduced by 20% (from 80% to 60%) */
 }
 
-#guestForm .reservation-details .reservation-field select#numberOfGuests {
-    width: 30%; 
-    text-align: center;
-    box-sizing: border-box;
+.reservation-field input#numberOfGuests[type="number"] {
+    width: 10%; /* Much smaller to hold 3 digits */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Include padding and border in the width */
+    -moz-appearance: textfield; /* Remove spinner arrows in Firefox */
 }
+
+
+
+
+
 
 
 
