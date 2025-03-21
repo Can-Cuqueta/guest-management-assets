@@ -78,6 +78,11 @@ input:invalid {
     background-color: #fff5f5; /* Light red background for invalid fields */
 }
 
+
+
+
+/*****************
+
 input[type="text"],
 input[type="date"],
 input[type="number"],
@@ -94,6 +99,11 @@ select {
     color: #5c3a21;
     box-sizing: border-box;
 }
+
+********************/
+
+
+
 
 /* Address Fields (Less Wide) */
 #guestDetails input {
