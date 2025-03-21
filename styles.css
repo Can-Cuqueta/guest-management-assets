@@ -195,6 +195,9 @@ tbody tr:hover {
     }
 }
 
+
+
+
 /* Reservation Details Section */
 .reservation-details {
     margin-bottom: 20px;
@@ -204,26 +207,27 @@ tbody tr:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Reservation Row */
 .reservation-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
     gap: 15px; /* Space between fields */
     margin-bottom: 10px;
 }
 
+/* Reservation Field */
 .reservation-field {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
+    flex: 1; /* Allow fields to grow and fill available space */
+    min-width: 120px; /* Minimum width for each field */
 }
 
-
-
- 
-
 /* General rule for reservation fields */
-.reservation-field input {
-    width: 100%;
+.reservation-field input,
+.reservation-field select {
+    width: 100%; /* Full width within the field */
     padding: 8px;
     border: 1px solid #d2b48c;
     border-radius: 5px;
@@ -249,10 +253,8 @@ tbody tr:hover {
     text-align: center; /* Center text */
 }
 
-
-
-#guestForm .reservation-details .reservation-row .reservation-field select#numberOfGuests {
-    width: 10%; /* Much smaller to hold 3 digits */
+.reservation-field select#numberOfGuests {
+    width: 30%; /* Much smaller to hold 3 digits */
     text-align: center; /* Center text */
     box-sizing: border-box; /* Include padding and border in the width */
     -moz-appearance: textfield; /* Remove spinner arrows in Firefox */
