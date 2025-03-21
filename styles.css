@@ -258,14 +258,11 @@ tbody tr:hover {
     width: 60%; /* Reduced by 20% (from 80% to 60%) */
 }
 
-.reservation-field input#numberOfGuests {
-    width: 30%; /* Much smaller to hold 3 digits */
+.reservation-field select#numberOfGuests {
+    width: 10%; /* Much smaller to hold 3 digits */
     text-align: center; /* Center text */
     box-sizing: border-box; /* Include padding and border in the width */
-    -moz-appearance: textfield; /* Remove spinner arrows in Firefox */
 }
-
-
 
 
 
