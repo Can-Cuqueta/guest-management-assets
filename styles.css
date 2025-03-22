@@ -415,7 +415,7 @@ tbody tr:hover {
 
 /* Style for email input */
 .guest-field input[id^="guest"][id$="email"] {
-    width: 200px; /* Slightly reduced width */
+    width: 300px; /* Slightly reduced width */
     background-color: #fff; /* White background */
     border-color: #d2b48c; /* Tan border color */
 }
