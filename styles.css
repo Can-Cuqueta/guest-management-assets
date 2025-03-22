@@ -584,7 +584,7 @@ tbody tr:hover {
 }
 
 #searchInput {
-    width: 100%;
+    width: 75%;
     padding: 8px 30px; /* Space for the icon */
     border: 2px solid #a0522d;
     border-radius: 5px;
