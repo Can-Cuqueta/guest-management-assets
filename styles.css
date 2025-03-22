@@ -309,6 +309,7 @@ tbody tr:hover {
 
 
 
+/*++++++++++++++++++++++++++++++++*/
 
 
 
@@ -385,28 +386,65 @@ tbody tr:hover {
 }
 
 
+/* Style for name input */
+.guest-field input[id^="guest"][id$="name"] {
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
+/* Style for gender dropdown */
+.guest-field select[id^="guest"][id$="gender"] {
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
+/* Style for birthdate input */
+.guest-field input[id^="guest"][id$="birthdate"] {
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
+/* Style for ID type dropdown */
+.guest-field select[id^="guest"][id$="idType"] {
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
+/* Style for ID country dropdown */
+.guest-field select[id^="guest"][id$="idCountry"] {
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
+/* Style for ID number input */
+.guest-field input[id^="guest"][id$="idNumber"] {
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
 /* Style for telephone input */
-input[id^="guest"][id$="telephone"] {
+.guest-field input[id^="guest"][id$="telephone"] {
     padding-left: 48px; /* Add padding for the country code dropdown */
 }
 
 /* Style for email input */
-input[id^="guest"][id$="email"] {
+.guest-field input[id^="guest"][id$="email"] {
     background-color: #fff; /* White background */
     border-color: #d2b48c; /* Tan border color */
 }
 
 /* Style for address fields */
-input[id^="guest"][id$="addressLine1"],
-input[id^="guest"][id$="addressLine2"],
-input[id^="guest"][id$="city"],
-input[id^="guest"][id$="zip"],
-select[id^="guest"][id$="country"] {
+.guest-field input[id^="guest"][id$="addressLine1"],
+.guest-field input[id^="guest"][id$="addressLine2"],
+.guest-field input[id^="guest"][id$="city"],
+.guest-field input[id^="guest"][id$="zip"],
+.guest-field select[id^="guest"][id$="country"] {
     width: 100%; /* Full width */
     margin-bottom: 10px; /* Space between fields */
 }
 
 
+/************************************/
 
 
 .guest-field .validation-message {
