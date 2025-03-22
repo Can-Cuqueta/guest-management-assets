@@ -479,27 +479,27 @@ tbody tr:hover {
 
 
 
-/* Style for Country dropdown */
+/* Adjust the width and arrow positioning for the Country dropdown */
+.guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default {
+    width: 80% !important; /* Set the desired width */
+}
+
 .guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default .select2-selection--single {
-    width: 80% !important; /* Set a smaller width */
+    height: 35px !important; /* Adjust height as needed */
+    line-height: 435px !important; /* Center the text vertically */
+    padding-right: 25px !important; /* Add padding to prevent text overlap with the arrow */
 }
 
-/* Increase height for Country dropdown */
-.guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default .select2-selection--single {
-    height: 40px !important; /* Adjust the height as needed */
-    line-height: 40px !important; /* Center the text vertically */
-}
-
-/* Adjust the inner rendered element */
-.guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default .select2-selection__rendered {
-    line-height: 40px !important; /* Ensure text alignment matches the height */
-}
-
-/* Adjust the dropdown arrow */
 .guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default .select2-selection__arrow {
-    height: 40px !important; /* Match the arrow height to the container */
+    height: 35px !important; /* Match the arrow height to the container */
+    width: 20px !important; /* Set a fixed width for the arrow container */
+    right: 0 !important; /* Position the arrow on the right side */
 }
 
+.guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default .select2-selection__arrow b {
+    top: 50% !important; /* Center the arrow vertically */
+    transform: translateY(-50%); /* Fine-tune vertical alignment */
+}
 
 
 
