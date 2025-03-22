@@ -470,6 +470,19 @@ tbody tr:hover {
 /************************************/
 
 
+/* Override Select2 container width */
+.select2-container--default {
+    width: 100% !important; /* Force full width */
+}
+
+/* Override Select2 dropdown width */
+.select2-dropdown {
+    width: 100% !important; /* Force full width */
+}
+
+/************************************/
+
+
 .guest-field .validation-message {
     color: #ff6b6b;
     font-size: 12px;
