@@ -422,7 +422,7 @@ tbody tr:hover {
 
 /* Style for ID type dropdown */
 .guest-field select[id^="guest"][id$="idType"] {
-    width: 40%; 
+    width: 55%; 
     text-align: center; 
 }
 
@@ -442,7 +442,7 @@ tbody tr:hover {
 /* Style for address fields */
 .guest-field input[id^="guest"][id$="addressLine1"],
 .guest-field input[id^="guest"][id$="addressLine2"] {
-    width: 100%; /* Full width */
+    width: 60%; /* Full width */
     margin-bottom: 10px; /* Space between fields */
 }
 
@@ -450,11 +450,13 @@ tbody tr:hover {
 .guest-field input[id^="guest"][id$="city"] {
     width: 100%; /* Full width */
     margin-bottom: 10px; /* Space between fields */
+    text-align: center;
 }
 
 .guest-field input[id^="guest"][id$="zip"] {
-    width: 100%; /* Full width */
+    width: 40%; /* Full width */
     margin-bottom: 10px; /* Space between fields */
+    text-align: center;
 }
 
 
@@ -473,7 +475,7 @@ tbody tr:hover {
 
 /* Style for ID Country dropdown */
 .guest-field select.country-dropdown[id^="guest"][id$="idCountry"] + .select2-container--default {
-    width: 70% !important; /* Set width for the container */
+    width: 100% !important; /* Set width for the container */
 }
 
 .guest-field select.country-dropdown[id^="guest"][id$="idCountry"] + .select2-container--default .select2-selection--single {
