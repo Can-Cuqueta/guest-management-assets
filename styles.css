@@ -428,7 +428,6 @@ tbody tr:hover {
 
 /* Style for ID country dropdown */
 .guest-field select.country-dropdown[id^="guest"][id$="idCountry"] {
-    width: 100% !important;
     text-align: center !important;
 }
 
