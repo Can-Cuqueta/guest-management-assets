@@ -314,24 +314,28 @@ tbody tr:hover {
 
 
 /* Guest Details Section */
-/* Guest Details Section */
 .guest-details {
     padding: 20px;
     background-color: #e6d8b5; /* Same as reservation details background */
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it takes full width */
+    max-width: 1200px; /* Increase max-width if needed */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .guest-row {
     display: flex;
     flex-wrap: nowrap; /* Ensure fields stay on the same row */
-    gap: 15px; /* Space between fields */
+    gap: 8px; /* Reduced space between fields */
     margin-bottom: 15px;
 }
 
 .guest-field {
     flex: 1; /* Allow fields to grow and fill available space */
+    flex-shrink: 1; /* Allow fields to shrink if necessary */
     min-width: 120px; /* Minimum width for each field */
 }
 
@@ -385,34 +389,33 @@ tbody tr:hover {
     cursor: not-allowed;
 }
 
-
 /* Style for name input */
 .guest-field input[id^="guest"][id$="name"] {
-    width: 200px; 
+    width: 180px; /* Slightly reduced width */
     text-align: center;
 }
 
 /* Style for gender dropdown */
 .guest-field select[id^="guest"][id$="gender"] {
-    width: 100px;
+    width: 90px; /* Slightly reduced width */
     text-align: center;
 }
 
 /* Style for birthdate input */
 .guest-field input[id^="guest"][id$="birthdate"] {
-    width: 130px;
+    width: 120px; /* Slightly reduced width */
     text-align: center;
 }
 
 /* Style for telephone input */
 .guest-field input[id^="guest"][id$="telephone"] {
-    width: 160px;
-    padding-left: 60px; 
+    width: 140px; /* Slightly reduced width */
+    padding-left: 60px; /* Add padding for the country code dropdown */
 }
 
 /* Style for email input */
 .guest-field input[id^="guest"][id$="email"] {
-    width: 220px;
+    width: 200px; /* Slightly reduced width */
     background-color: #fff; /* White background */
     border-color: #d2b48c; /* Tan border color */
 }
@@ -434,6 +437,8 @@ tbody tr:hover {
     width: 100%; /* Full width */
     text-align: center; /* Center text */
 }
+
+
 
 /* Style for address fields */
 .guest-field input[id^="guest"][id$="addressLine1"],
@@ -458,8 +463,6 @@ tbody tr:hover {
     width: 100%; /* Full width */
     margin-bottom: 10px; /* Space between fields */
 }
-
-
 
 
 
