@@ -409,7 +409,7 @@ tbody tr:hover {
 
 /* Style for telephone input */
 .guest-field input[id^="guest"][id$="telephone"] {
-    width: 160px; 
+    width: 100%; 
     padding-left: 60px; 
 }
 
