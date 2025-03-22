@@ -493,6 +493,9 @@ tbody tr:hover {
     transform: translateY(-50%); /* Fine-tune vertical alignment */
 }
 
+
+
+
 /* Style for Country dropdown */
 .guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default {
     width: 70% !important; /* Set width for the container */
