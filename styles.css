@@ -350,7 +350,7 @@ tbody tr:hover {
     border: 1px solid #d2b48c;
     border-radius: 5px;
     background-color: #fff;
-    font-size: 14px;
+    font-size: 15px;
     color: #5c3a21;
     box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
@@ -388,20 +388,20 @@ tbody tr:hover {
 
 /* Style for name input */
 .guest-field input[id^="guest"][id$="name"] {
-    width: 100%; /* Full width */
-    text-align: center; /* Center text */
+    width: 100%; 
+    text-align: center;
 }
 
 /* Style for gender dropdown */
 .guest-field select[id^="guest"][id$="gender"] {
-    width: 100%; /* Full width */
-    text-align: center; /* Center text */
+    width: 35%;
+    text-align: center;
 }
 
 /* Style for birthdate input */
 .guest-field input[id^="guest"][id$="birthdate"] {
-    width: 100%; /* Full width */
-    text-align: center; /* Center text */
+    width: 45%;
+    text-align: center;
 }
 
 /* Style for ID type dropdown */
@@ -424,7 +424,8 @@ tbody tr:hover {
 
 /* Style for telephone input */
 .guest-field input[id^="guest"][id$="telephone"] {
-    padding-left: 48px; /* Add padding for the country code dropdown */
+    width: 45%;
+    padding-left: 60px; 
 }
 
 /* Style for email input */
@@ -435,13 +436,31 @@ tbody tr:hover {
 
 /* Style for address fields */
 .guest-field input[id^="guest"][id$="addressLine1"],
-.guest-field input[id^="guest"][id$="addressLine2"],
-.guest-field input[id^="guest"][id$="city"],
-.guest-field input[id^="guest"][id$="zip"],
+.guest-field input[id^="guest"][id$="addressLine2"] {
+    width: 100%; /* Full width */
+    margin-bottom: 10px; /* Space between fields */
+}
+
+
+.guest-field input[id^="guest"][id$="city"] {
+    width: 100%; /* Full width */
+    margin-bottom: 10px; /* Space between fields */
+}
+
+.guest-field input[id^="guest"][id$="zip"] {
+    width: 100%; /* Full width */
+    margin-bottom: 10px; /* Space between fields */
+}
+
+
 .guest-field select[id^="guest"][id$="country"] {
     width: 100%; /* Full width */
     margin-bottom: 10px; /* Space between fields */
 }
+
+
+
+
 
 
 /************************************/
