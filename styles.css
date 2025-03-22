@@ -470,12 +470,12 @@ tbody tr:hover {
 
 
 /* Style for ID Country dropdown */
-.select2-container--default select[id$="idCountry"] {
+.guest-field .select2-container--default select[id$="idCountry"] {
     width: 100% !important; /* Force full width */
 }
 
 /* Style for Country dropdown */
-.select2-container--default select[id$="country"] {
+.guest-field .select2-container--default select[id$="country"] {
     width: 80% !important; /* Set a smaller width */
 }
 
