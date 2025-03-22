@@ -388,20 +388,33 @@ tbody tr:hover {
 
 /* Style for name input */
 .guest-field input[id^="guest"][id$="name"] {
-    width: 100%; 
+    width: 200px; 
     text-align: center;
 }
 
 /* Style for gender dropdown */
 .guest-field select[id^="guest"][id$="gender"] {
-    width: 35%;
+    width: 100px;
     text-align: center;
 }
 
 /* Style for birthdate input */
 .guest-field input[id^="guest"][id$="birthdate"] {
-    width: 45%;
+    width: 130px;
     text-align: center;
+}
+
+/* Style for telephone input */
+.guest-field input[id^="guest"][id$="telephone"] {
+    width: 160px;
+    padding-left: 60px; 
+}
+
+/* Style for email input */
+.guest-field input[id^="guest"][id$="email"] {
+    width: 220px;
+    background-color: #fff; /* White background */
+    border-color: #d2b48c; /* Tan border color */
 }
 
 /* Style for ID type dropdown */
@@ -420,18 +433,6 @@ tbody tr:hover {
 .guest-field input[id^="guest"][id$="idNumber"] {
     width: 100%; /* Full width */
     text-align: center; /* Center text */
-}
-
-/* Style for telephone input */
-.guest-field input[id^="guest"][id$="telephone"] {
-    width: 45%;
-    padding-left: 60px; 
-}
-
-/* Style for email input */
-.guest-field input[id^="guest"][id$="email"] {
-    background-color: #fff; /* White background */
-    border-color: #d2b48c; /* Tan border color */
 }
 
 /* Style for address fields */
