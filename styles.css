@@ -433,7 +433,7 @@ tbody tr:hover {
 
 /* Style for ID number input */
 #guestDetails .guest-row .guest-field input[id^="guest"][id$="idNumber"] {
-    width: 100% !important; 
+    width: 70% !important; 
     text-align: center !important;
 }
 
