@@ -101,8 +101,6 @@ select {
     box-sizing: border-box;
 }
 
-********************/
-
 
 
 
@@ -110,6 +108,10 @@ select {
 #guestDetails input {
     width: 80%;
 }
+********************/
+
+
+
 
 /* Style for dropdowns (select elements) */
 #guestDetails select {
