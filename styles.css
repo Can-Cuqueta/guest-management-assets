@@ -230,6 +230,14 @@ tbody tr:hover {
     gap: 5px; /* Space between label and input */
 }
 
+
+/* Push Date Range field and its label to the right */
+.reservation-field:nth-child(3) { /* Target the third field (Date Range) */
+    margin-left: 20px; /* Adjust this value as needed */
+}
+
+
+
 /* General rule for reservation fields */
 .reservation-field input,
 .reservation-field select {
