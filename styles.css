@@ -469,14 +469,16 @@ tbody tr:hover {
 
 
 /* Style for ID Country dropdown */
-.guest-field .select2-container--default select[id$="idCountry"] {
+#guest\\${index}_idCountry + .select2-container--default .select2-selection--single {
     width: 100% !important; /* Force full width */
 }
 
 /* Style for Country dropdown */
-.guest-field .select2-container--default select[id$="country"] {
+#guest\\${index}_country + .select2-container--default .select2-selection--single {
     width: 80% !important; /* Set a smaller width */
 }
+
+
 
 
 /************************************/
