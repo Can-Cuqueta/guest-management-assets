@@ -362,7 +362,7 @@ tbody tr:hover {
 }
 
 .guest-field label {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     color: #5c3a21;
     display: block;
@@ -411,38 +411,30 @@ tbody tr:hover {
     cursor: not-allowed;
 }
 
-.use-main-address {
-    margin-bottom: 15px;
-    text-align: center;
+
+/* Style for telephone input */
+input[id^="guest"][id$="telephone"] {
+    padding-left: 48px; /* Add padding for the country code dropdown */
 }
 
-.use-main-address label {
-    font-size: 14px;
-    color: #5c3a21;
-    cursor: pointer;
+/* Style for email input */
+input[id^="guest"][id$="email"] {
+    background-color: #fff; /* White background */
+    border-color: #d2b48c; /* Tan border color */
 }
 
-.use-main-address input[type="checkbox"] {
-    margin-right: 8px;
-    cursor: pointer;
+/* Style for address fields */
+input[id^="guest"][id$="addressLine1"],
+input[id^="guest"][id$="addressLine2"],
+input[id^="guest"][id$="city"],
+input[id^="guest"][id$="zip"],
+select[id^="guest"][id$="country"] {
+    width: 100%; /* Full width */
+    margin-bottom: 10px; /* Space between fields */
 }
 
-.guest-field input[type="tel"] {
-    padding-left: 48px;
-}
 
-.guest-field input[type="email"] {
-    background-color: #fff;
-    border-color: #d2b48c;
-}
 
-.guest-field input[id*="addressLine"],
-.guest-field input[id*="city"],
-.guest-field input[id*="zip"],
-.guest-field select[id*="country"] {
-    width: 100%;
-    margin-bottom: 10px;
-}
 
 .guest-field .validation-message {
     color: #ff6b6b;
@@ -452,17 +444,13 @@ tbody tr:hover {
 
 
 
-
-
-
-/* Checkbox Styles */
 .use-main-address {
     margin-bottom: 15px;
     text-align: center;
 }
 
 .use-main-address label {
-    font-size: 14px;
+    font-size: 15px;
     color: #5c3a21;
     cursor: pointer;
 }
@@ -471,6 +459,12 @@ tbody tr:hover {
     margin-right: 8px;
     cursor: pointer;
 }
+
+
+
+
+
+
 
 /* Navigation Icons */
 .guest-navigation {
