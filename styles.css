@@ -477,19 +477,19 @@ tbody tr:hover {
 }
 
 
-.guest-field select.country-dropdown[id^="guest"][id$="idcountry"] + .select2-container--default .select2-selection--single {
+.guest-field select.country-dropdown[id^="guest"][id$="idCountry"] + .select2-container--default .select2-selection--single {
     height: 35px !important; /* Adjust height as needed */
     line-height: 35px !important; /* Center the text vertically */
     padding-right: 25px !important; /* Add padding to prevent text overlap with the arrow */
 }
 
-.guest-field select.country-dropdown[id^="guest"][id$="idcountry"] + .select2-container--default .select2-selection__arrow {
+.guest-field select.country-dropdown[id^="guest"][id$="idCountry"] + .select2-container--default .select2-selection__arrow {
     height: 35px !important; /* Match the arrow height to the container */
     width: 20px !important; /* Set a fixed width for the arrow container */
     right: 0 !important; /* Position the arrow on the right side */
 }
 
-.guest-field select.country-dropdown[id^="guest"][id$="idcountry"] + .select2-container--default .select2-selection__arrow b {
+.guest-field select.country-dropdown[id^="guest"][id$="idCountry"] + .select2-container--default .select2-selection__arrow b {
     top: 50% !important; /* Center the arrow vertically */
     transform: translateY(-50%); /* Fine-tune vertical alignment */
 }
