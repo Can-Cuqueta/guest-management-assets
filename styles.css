@@ -26,9 +26,10 @@ header {
     max-height: 300px;
 }
 
+
 /* Form Container */
 .form-container {
-    max-width: 800px;
+    max-width: 1000px; /* Increased width */
     margin: 20px auto;
     padding: 20px;
     background-color: #fff8e7; /* Brighter cream for the form container */
@@ -198,6 +199,8 @@ tbody tr:hover {
 
 
 
+
+
 /* Reservation Details Section */
 .reservation-details {
     margin-bottom: 20px;
@@ -211,7 +214,7 @@ tbody tr:hover {
 .reservation-row {
     display: flex;
     flex-wrap: nowrap; /* Prevent wrapping to the next line */
-    gap: 15px; /* Space between fields */
+    gap: 35px; /* Increased space between fields */
     margin-bottom: 10px;
 }
 
@@ -220,8 +223,11 @@ tbody tr:hover {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     flex: 1; /* Allow fields to grow and fill available space */
+    flex-shrink: 0; /* Prevent fields from shrinking */
     min-width: 120px; /* Minimum width for each field */
+    gap: 5px; /* Space between label and input */
 }
 
 /* General rule for reservation fields */
@@ -239,26 +245,29 @@ tbody tr:hover {
 
 /* Field-specific styles */
 .reservation-field input#reference {
-    width: 80%;
+    width: 150px; /* Fixed width for reference field */
     text-align: center; /* Center text */
 }
 
 .reservation-field input#guestName {
-    width: 100%;
-    text-align: right; /* Align text to the right */
+    width: 200px; /* Fixed width for guest name field */
+    text-align: center; /* Center text */
 }
 
 .reservation-field input#dateRange {
-    width: 100%;
+    width: 200px; /* Fixed width for date range field */
     text-align: center; /* Center text */
 }
 
 .reservation-field select#numberOfGuests {
-    width: 30%; /* Much smaller to hold 3 digits */
+    width: 80px; /* Small width for 2-digit number */
     text-align: center; /* Center text */
-    box-sizing: border-box; /* Include padding and border in the width */
+    box-sizing: border-box;
     -moz-appearance: textfield; /* Remove spinner arrows in Firefox */
+    margin: 0 auto; /* Center the select horizontally */
 }
+
+
 
 
 
