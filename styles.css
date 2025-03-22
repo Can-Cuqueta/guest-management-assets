@@ -472,10 +472,9 @@ tbody tr:hover {
 
 
 /* Style for ID Country dropdown */
-.guest-field select.country-dropdown[id^="guest"][id$="idCountry"] + .select2-container--default .select2-selection--single {
-    width: 70% !important; /* Force full width */
+.guest-field select.country-dropdown[id^="guest"][id$="idCountry"] + .select2-container--default {
+    width: 70% !important; /* Set width for the container */
 }
-
 
 .guest-field select.country-dropdown[id^="guest"][id$="idCountry"] + .select2-container--default .select2-selection--single {
     height: 35px !important; /* Adjust height as needed */
@@ -494,13 +493,9 @@ tbody tr:hover {
     transform: translateY(-50%); /* Fine-tune vertical alignment */
 }
 
-
-
-
-
-/* Adjust the width and arrow positioning for the Country dropdown */
+/* Style for Country dropdown */
 .guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default {
-    width: 70% !important; /* Set the desired width */
+    width: 70% !important; /* Set width for the container */
 }
 
 .guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default .select2-selection--single {
