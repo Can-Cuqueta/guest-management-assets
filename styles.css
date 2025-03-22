@@ -210,6 +210,12 @@ tbody tr:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
+.reservation-details h3 {
+    margin-top: 5px;
+}
+
+
 /* Reservation Row */
 .reservation-row {
     display: flex;
@@ -230,11 +236,6 @@ tbody tr:hover {
     gap: 5px; /* Space between label and input */
 }
 
-
-/* Push Date Range field and its label to the right */
-.reservation-field:nth-child(3) { /* Target the third field (Date Range) */
-    margin-left: 20px; /* Adjust this value as needed */
-}
 
 
 
@@ -258,21 +259,22 @@ tbody tr:hover {
 }
 
 .reservation-field input#guestName {
-    width: 200px; /* Fixed width for guest name field */
-    text-align: center; /* Center text */
+    width: 200px; 
+    text-align: center; 
 }
 
 .reservation-field input#dateRange {
-    width: 200px; /* Fixed width for date range field */
-    text-align: center; /* Center text */
+    width: 260px; 
+    text-align: center;
+    margin-left: 20px;
 }
 
 .reservation-field select#numberOfGuests {
-    width: 80px; /* Small width for 2-digit number */
-    text-align: center; /* Center text */
+    width: 50px;
+    text-align: center; 
     box-sizing: border-box;
     -moz-appearance: textfield; /* Remove spinner arrows in Firefox */
-    margin: 0 auto; /* Center the select horizontally */
+    margin: 0 auto;
 }
 
 
