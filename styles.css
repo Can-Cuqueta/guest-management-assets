@@ -479,7 +479,7 @@ tbody tr:hover {
 
 .guest-field select.country-dropdown[id^="guest"][id$="idcountry"] + .select2-container--default .select2-selection--single {
     height: 35px !important; /* Adjust height as needed */
-    line-height: 435px !important; /* Center the text vertically */
+    line-height: 35px !important; /* Center the text vertically */
     padding-right: 25px !important; /* Add padding to prevent text overlap with the arrow */
 }
 
@@ -505,7 +505,7 @@ tbody tr:hover {
 
 .guest-field select.country-dropdown[id^="guest"][id$="country"] + .select2-container--default .select2-selection--single {
     height: 35px !important; /* Adjust height as needed */
-    line-height: 435px !important; /* Center the text vertically */
+    line-height: 35px !important; /* Center the text vertically */
     padding-right: 25px !important; /* Add padding to prevent text overlap with the arrow */
 }
 
