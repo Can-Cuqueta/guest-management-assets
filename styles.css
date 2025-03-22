@@ -433,9 +433,9 @@ tbody tr:hover {
 }
 
 /* Style for ID number input */
-.guest-details .guest-field input[id^="guest"][id$="idNumber"] {    
-    width: 100%; 
-    text-align: center; 
+#guestDetails .guest-row .guest-field input[id^="guest"][id$="idNumber"] {
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
 }
 
 
