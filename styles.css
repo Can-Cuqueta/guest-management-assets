@@ -105,7 +105,7 @@ input:invalid {
 }
 
 /* Buttons */
-.nav-button, .save-button, .delete-button, .modify-btn, .cancel-button, .generate-pdf-button {
+.nav-button, .save-button, .delete-button, .modify-btn, .cancel-button, .generate-pdf-button, .calendar-button {
     background-color: #a0522d;
     color: white;
     padding: 10px 20px;
@@ -800,26 +800,6 @@ tbody tr:hover {
 /*********************/
 
 
-.calendar-button {
-    background-color: #4285F4; /* Google Calendar blue */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
 
-.calendar-button:hover {
-    background-color: #3367D6;
-}
-
-.calendar-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
 
     
