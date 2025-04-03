@@ -105,7 +105,8 @@ input:invalid {
 }
 
 /* Buttons */
-.nav-button, .save-button, .delete-button, .modify-btn, .cancel-button, .generate-pdf-button, .calendar-button {
+.nav-button, .save-button, .delete-button, .modify-btn, .cancel-button,
+.generate-pdf-button, .calendar-button, .generate-xml-button {
     background-color: #a0522d;
     color: white;
     padding: 10px 20px;
