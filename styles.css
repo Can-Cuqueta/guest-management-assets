@@ -410,7 +410,7 @@ tbody tr:hover {
 
 /* Style for kinship dropdown */
 .guest-field select[id^="guest"][id$="kinship"] {
-    width: 100px; 
+    width: 190px; 
     text-align: center;
 }
 
