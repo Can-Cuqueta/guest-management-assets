@@ -408,6 +408,13 @@ tbody tr:hover {
     text-align: center;
 }
 
+/* Style for kinship dropdown */
+.guest-field select[id^="guest"][id$="kinship"] {
+    width: 100px; 
+    text-align: center;
+}
+
+
 /* Style for telephone input */
 .guest-field input[id^="guest"][id$="telephone"] {
     width: 100%; 
@@ -801,6 +808,22 @@ tbody tr:hover {
 /*********************/
 
 
+.tooltip {
+  cursor: help;
+  color: #0066cc;
+}
 
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  padding: 15px;
+  border-radius: 5px;
+}
 
     
