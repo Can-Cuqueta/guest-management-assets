@@ -826,4 +826,13 @@ tbody tr:hover {
   border-radius: 5px;
 }
 
-    
+            .help-icon {
+              color: #0066cc;
+              cursor: help;
+              margin-left: 5px;
+              transition: all 0.3s;
+            }
+            .help-icon:hover {
+              color: #004499;
+            }
+        
