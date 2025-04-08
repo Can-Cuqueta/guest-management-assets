@@ -532,32 +532,29 @@ tbody tr:hover {
 /************************************/
 
 
- /* Base styles - hide all readonly fields by default */
+ /* [1] Hide ALL country readonly inputs by default */
   [id$="_country_readonly"] {
     display: none !important;
   }
-  
-  /* Guest 1 - always show dropdown */
+
+  /* [2] Guest 1 - Always show dropdown */
   #guest1_country {
     display: block !important;
   }
+
+  /* [3] Guests 2+ - Default state (checkbox unchecked) */
+  select[id^="guest"][id$="_country"]:not(#guest1_country) {
+    display: block !important; /* Show dropdown */
+  }
+
+  /* [4] Guests 2+ - When checkbox is checked */
+  select[id^="guest"][id$="_country"].hidden-dropdown {
+    display: none !important; /* Hide dropdown */
+  }
+  [id^="guest"][id$="_country_readonly"].visible-readonly {
+    display: block !important; /* Show readonly */
+  }
   
-  /* Guests 2+ - dynamic visibility */
-  .guest-field select[id$="_country"]:not(#guest1_country) {
-    display: none;
-  }
-  .guest-field select[id$="_country"].visible-dropdown {
-    display: block !important;
-  }
-  .guest-field [id$="_country_readonly"].visible-readonly {
-    display: block !important;
-  }
-
-  .guest-field select, 
-.guest-field [id$="_country_readonly"] {
-    transition: all 0.3s ease;
-}
-
 /************************************/
 
 
