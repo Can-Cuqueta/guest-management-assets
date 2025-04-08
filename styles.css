@@ -553,6 +553,11 @@ tbody tr:hover {
     display: block !important;
   }
 
+  .guest-field select, 
+.guest-field [id$="_country_readonly"] {
+    transition: all 0.3s ease;
+}
+
 /************************************/
 
 
