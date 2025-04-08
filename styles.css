@@ -532,58 +532,28 @@ tbody tr:hover {
 /************************************/
 
 
- /* ===== CORE VISIBILITY CONTROL ===== */
-  /* 1. Hide all readonly fields by default (original rule) */
+   /* [1] Base reset - hide all country fields by default */
+  [id$="_country"],
   [id$="_country_readonly"] {
     display: none !important;
-  }
-
-  /* 2. Guest 1 - Always show dropdown (original rule) */
-  #guest1_country {
-    display: block !important;
-    visibility: visible !important; /* Added for consistency */
-  }
-
-  /* 3. Guests 2+ - Default state (checkbox unchecked) (original rule) */
-  select[id^="guest"][id$="_country"]:not(#guest1_country) {
-    display: block !important;
-    visibility: visible !important; /* Added */
-  }
-
-  /* 4. Enhanced hiding for Guests 2+ (combined old and new) */
-  select[id^="guest"][id$="_country"].force-hidden {
-    display: none !important;
-    visibility: hidden !important;
-    position: absolute !important; /* New - nuclear option */
-    left: -9999px !important;      /* New */
-  }
-
-  /* 5. Enhanced showing for readonly (combined old and new) */
-  [id^="guest"][id$="_country_readonly"].force-visible {
-    display: block !important;
-    visibility: visible !important;
-    position: relative !important; /* New - resets absolute */
-    left: auto !important;         /* New */
-  }
-
-  /* ===== SELECT2 SPECIFIC FIXES ===== */
-  /* Ensures Select2 doesn't interfere with visibility */
-  .select2-container.force-hidden {
-    display: none !important;
-  }
-  
-  /* ===== TRANSITIONS (optional) ===== */
-  .guest-field select[id^="guest"][id$="_country"],
-  .guest-field [id$="_country_readonly"] {
-    transition: opacity 0.2s ease; /* Smooth fade */
-  }
-  .force-hidden {
     opacity: 0 !important;
   }
-  .force-visible {
+
+  /* [2] Guest 1 - Force show only dropdown */
+  #guest1_country {
+    display: block !important;
     opacity: 1 !important;
   }
 
+  /* [3] Conditional visibility - controlled by JS */
+  .country-dropdown.visible {
+    display: block !important;
+    opacity: 1 !important;
+  }
+  .readonly-country.visible {
+    display: block !important;
+    opacity: 1 !important;
+  }
   
 /************************************/
 
