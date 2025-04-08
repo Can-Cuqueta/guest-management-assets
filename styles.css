@@ -529,7 +529,20 @@ tbody tr:hover {
 }
 
 
+/************************************/
 
+
+/****** Apply these when edi_guest_info loads ************/
+
+  /* Add this to ensure fields start hidden */
+  
+  .country-dropdown[readonly] {
+    display: none !important;
+  }
+  select.country-dropdown:not(.select2-hidden-accessible) {
+    display: none !important;
+  }
+  
 
 /************************************/
 
