@@ -532,20 +532,26 @@ tbody tr:hover {
 /************************************/
 
 
-  /* Absolute visibility control */
+  /* [1] Always hide readonly fields for ALL guests */
   [id$="_country_readonly"] {
     display: none !important;
   }
-  select[id$="_country"] {
+
+  /* [2] For Guest 1 specifically - force dropdown visibility */
+  #guest1_country {
+    display: block !important;
+  }
+
+  /* [3] For other guests (index > 1) - dynamic visibility */
+  select[id$="_country"]:not(#guest1_country) {
     display: none !important;
   }
-  select[id$="_country"].active-select {
+  select[id$="_country"].active-select:not(#guest1_country) {
     display: block !important;
   }
-  [id$="_country_readonly"].active-readonly {
+  [id$="_country_readonly"].active-readonly:not(#guest1_country_readonly) {
     display: block !important;
   }
-  
 
 /************************************/
 
