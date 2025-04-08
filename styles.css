@@ -532,24 +532,24 @@ tbody tr:hover {
 /************************************/
 
 
-  /* [1] Always hide readonly fields for ALL guests */
+ /* Base styles - hide all readonly fields by default */
   [id$="_country_readonly"] {
     display: none !important;
   }
-
-  /* [2] For Guest 1 specifically - force dropdown visibility */
+  
+  /* Guest 1 - always show dropdown */
   #guest1_country {
     display: block !important;
   }
-
-  /* [3] For other guests (index > 1) - dynamic visibility */
-  select[id$="_country"]:not(#guest1_country) {
-    display: none !important;
+  
+  /* Guests 2+ - dynamic visibility */
+  .guest-field select[id$="_country"]:not(#guest1_country) {
+    display: none;
   }
-  select[id$="_country"].active-select:not(#guest1_country) {
+  .guest-field select[id$="_country"].visible-dropdown {
     display: block !important;
   }
-  [id$="_country_readonly"].active-readonly:not(#guest1_country_readonly) {
+  .guest-field [id$="_country_readonly"].visible-readonly {
     display: block !important;
   }
 
