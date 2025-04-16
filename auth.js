@@ -1,4 +1,3 @@
-// auth.js - Updated with token management
 const AUTH_ENDPOINT = '<?!= deploymentUrl ?>';
 
 class Auth {
@@ -17,14 +16,16 @@ class Auth {
       google.script.run
         .withSuccessHandler(userData => {
           if (!userData) {
-            this.clearToken();
+            this.clearSession();
             reject('Invalid token');
           } else {
+            // Store user data separately from token
+            sessionStorage.setItem('userData', JSON.stringify(userData));
             resolve(userData);
           }
         })
         .withFailureHandler(err => {
-          this.clearToken();
+          this.clearSession();
           reject(err.message || 'Auth check failed');
         })
         .validateToken(token);
@@ -45,9 +46,14 @@ class Auth {
     return urlToken || storedToken;
   }
 
-  static clearToken() {
+  static getUser() {
+    const userData = sessionStorage.getItem('userData');
+    return userData ? JSON.parse(userData) : null;
+  }
+
+  static clearSession() {
     sessionStorage.removeItem('authToken');
-    sessionStorage.removeItem('rentalSystemUser');
+    sessionStorage.removeItem('userData');
   }
 
   static redirectToAuth() {
@@ -62,6 +68,15 @@ class Auth {
         );
       history.replaceState(null, '', cleanUrl);
     }
+  }
+
+  // Debug helper
+  static debug() {
+    return {
+      token: this.getToken(),
+      user: this.getUser(),
+      url: window.location.href
+    };
   }
 }
 
