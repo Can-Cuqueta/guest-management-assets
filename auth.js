@@ -1,4 +1,6 @@
 const AUTH_ENDPOINT = '<?!= deploymentUrl ?>';
+const TOKEN_REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+const MAX_REFRESH_ATTEMPTS = 3;
 
 class Auth {
   static init() {
@@ -6,6 +8,14 @@ class Auth {
     if (window.location.search.includes('token=')) {
       this._cleanUrl();
     }
+    
+    // Initialize heartbeat if token exists
+    if (this.getToken()) {
+      this._startHeartbeat();
+    }
+    
+    // Setup cross-tab communication
+    window.addEventListener('storage', this._handleStorageEvent.bind(this));
   }
 
   static async check() {
@@ -17,33 +27,34 @@ class Auth {
         .withSuccessHandler(userData => {
           if (!userData) {
             this.clearSession();
-            reject('Invalid token');
+            reject(new Error('Invalid token'));
           } else {
-            // Store user data separately from token
             sessionStorage.setItem('userData', JSON.stringify(userData));
             resolve(userData);
           }
         })
         .withFailureHandler(err => {
           this.clearSession();
-          reject(err.message || 'Auth check failed');
+          reject(new Error(err.message || 'Auth check failed'));
         })
         .validateToken(token);
     });
   }
 
   static getToken() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlToken = urlParams.get('token');
+    // Always prefer sessionStorage over URL token
     const storedToken = sessionStorage.getItem('authToken');
+    if (storedToken) return storedToken;
     
-    // Persist URL token if present
-    if (urlToken && urlToken !== storedToken) {
+    // Fallback to URL token
+    const urlToken = new URLSearchParams(window.location.search).get('token');
+    if (urlToken) {
       sessionStorage.setItem('authToken', urlToken);
       this._cleanUrl();
+      return urlToken;
     }
-
-    return urlToken || storedToken;
+    
+    return null;
   }
 
   static getUser() {
@@ -52,16 +63,76 @@ class Auth {
   }
 
   static clearSession() {
+    this._stopHeartbeat();
     sessionStorage.removeItem('authToken');
     sessionStorage.removeItem('userData');
+    
+    // Notify other tabs
+    localStorage.setItem('authToken_clear', Date.now());
+    setTimeout(() => localStorage.removeItem('authToken_clear'), 100);
   }
 
   static redirectToAuth() {
     window.location.href = `${AUTH_ENDPOINT}?type=auth`;
   }
 
+  static async refreshToken() {
+    const token = this.getToken();
+    if (!token) return false;
+
+    try {
+      const result = await new Promise((resolve, reject) => {
+        google.script.run
+          .withSuccessHandler(resolve)
+          .withFailureHandler(reject)
+          .extendToken(token);
+      });
+      
+      if (!result) {
+        throw new Error('Token refresh rejected by server');
+      }
+      return true;
+    } catch (error) {
+      console.warn('Token refresh failed:', error);
+      this._refreshAttempts = (this._refreshAttempts || 0) + 1;
+      
+      if (this._refreshAttempts >= MAX_REFRESH_ATTEMPTS) {
+        this.clearSession();
+      }
+      throw error;
+    }
+  }
+
+  static _startHeartbeat() {
+    this._stopHeartbeat();
+    this._heartbeatInterval = setInterval(async () => {
+      try {
+        await this.refreshToken();
+        this._refreshAttempts = 0; // Reset on success
+      } catch (error) {
+        console.warn('Heartbeat failed:', error);
+      }
+    }, TOKEN_REFRESH_INTERVAL);
+  }
+
+  static _stopHeartbeat() {
+    if (this._heartbeatInterval) {
+      clearInterval(this._heartbeatInterval);
+      this._heartbeatInterval = null;
+    }
+  }
+
+  static _handleStorageEvent(event) {
+    // Handle cross-tab logout
+    if (event.key === 'authToken_clear') {
+      this._stopHeartbeat();
+      sessionStorage.clear();
+      this.redirectToAuth();
+    }
+  }
+
   static _cleanUrl() {
-    if (history.replaceState) {
+    if (history.replaceState && window.location.search.includes('token=')) {
       const cleanUrl = window.location.pathname + 
         window.location.search.replace(/([&?])token=[^&]*(&?)/i, (_, p1, p2) => 
           p2 ? p1 : ''
@@ -70,12 +141,13 @@ class Auth {
     }
   }
 
-  // Debug helper
   static debug() {
     return {
       token: this.getToken(),
       user: this.getUser(),
-      url: window.location.href
+      url: window.location.href,
+      heartbeatActive: !!this._heartbeatInterval,
+      refreshAttempts: this._refreshAttempts || 0
     };
   }
 }
