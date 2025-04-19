@@ -8,7 +8,7 @@ class Auth {
       
     // Clean URL if it contains token
 
-    consol.log ('---------- IN auth.js, init  --------');
+    console.log ('---------- IN auth.js, init  --------');
   
     console.log("Auth initialization", this.logState());
     
@@ -55,7 +55,7 @@ class Auth {
 static getToken() {
 
     
-  consol.log ('---------- IN auth.js, getToken  --------');
+  console.log ('---------- IN auth.js, getToken  --------');
   
   console.log("Token check - URL:", window.location.search);
   console.log("Token check - Storage:", sessionStorage.getItem('authToken'));
