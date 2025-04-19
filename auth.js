@@ -54,46 +54,47 @@ class Auth {
 
 static getToken() {
 
-    
   console.log ('---------- IN auth.js, getToken  --------');
   
-  console.log("Token check - URL:", window.location.search);
-  console.log("Token check - Storage:", sessionStorage.getItem('authToken'));
-  console.log("getToken() state", this.logState("Before token check"));
   
+  // 1. Log raw values WITHOUT method calls
+  const debugData = {
+    urlToken: new URLSearchParams(window.location.search).get('token'),
+    storedToken: sessionStorage.getItem('authToken'),
+    lastUpdate: sessionStorage.getItem('lastTokenUpdate')
+  };
   
-  // 1. Check URL first (critical for initial load)
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlToken = urlParams.get('token');
-  
-  // 2. If URL has token, store it and clean URL
+  console.table(debugData);
+
+  // 2. Original logic (unchanged)
+  const urlToken = debugData.urlToken; // Reuse from debug
   if (urlToken) {
-    console.log("Found URL token, storing...");
+    console.log("Storing URL token...");
     sessionStorage.setItem('authToken', urlToken);
     sessionStorage.setItem('lastTokenUpdate', Date.now());
     this._cleanUrl();
     return urlToken;
   }
   
-  // 3. Fallback to sessionStorage
-  return sessionStorage.getItem('authToken');
+  return debugData.storedToken; // Reuse from debug
 }
 
 
 static logState(context = '') {
+  // SAFE debug - doesn't call other Auth methods
   return {
     context,
     timestamp: new Date().toISOString(),
-    token: this.getToken(),
-    user: this.getUser(),
     storage: {
       authToken: sessionStorage.getItem('authToken'),
       userData: sessionStorage.getItem('userData')
     },
-    url: window.location.href
+    urlToken: new URLSearchParams(window.location.search).get('token'),
+    url: window.location.href,
+    // Add other raw data you need
+    heartbeatActive: !!this._heartbeatInterval
   };
 }
-
 
   
   
