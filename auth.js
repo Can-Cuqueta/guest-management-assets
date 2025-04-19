@@ -3,21 +3,16 @@ const TOKEN_REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
 const MAX_REFRESH_ATTEMPTS = 3;
 
 
-
-console.log("=== CLIENT SESSION ===");
-console.log("Auth.getToken():", Auth.getToken());
-console.log("Auth.getUser():", Auth.getUser());
-console.log("sessionStorage:", {
-  authToken: sessionStorage.getItem('authToken'),
-  userData: sessionStorage.getItem('userData')
-});
-console.log("URL Token:", new URLSearchParams(window.location.search).get('token'));
-
-
-
 class Auth {
   static init() {
+      
     // Clean URL if it contains token
+
+    consol.log ('---------- IN auth.js, init  --------');
+  
+    console.log("Auth initialization", this.logState());
+    
+    
     if (window.location.search.includes('token=')) {
       this._cleanUrl();
     }
@@ -54,10 +49,18 @@ class Auth {
     });
   }
 
+
+
+
 static getToken() {
-  // Debug current state
+
+    
+  consol.log ('---------- IN auth.js, getToken  --------');
+  
   console.log("Token check - URL:", window.location.search);
   console.log("Token check - Storage:", sessionStorage.getItem('authToken'));
+  console.log("getToken() state", this.logState("Before token check"));
+  
   
   // 1. Check URL first (critical for initial load)
   const urlParams = new URLSearchParams(window.location.search);
@@ -75,6 +78,25 @@ static getToken() {
   // 3. Fallback to sessionStorage
   return sessionStorage.getItem('authToken');
 }
+
+
+static logState(context = '') {
+  return {
+    context,
+    timestamp: new Date().toISOString(),
+    token: this.getToken(),
+    user: this.getUser(),
+    storage: {
+      authToken: sessionStorage.getItem('authToken'),
+      userData: sessionStorage.getItem('userData')
+    },
+    url: window.location.href
+  };
+}
+
+
+  
+  
 
   static getUser() {
     const userData = sessionStorage.getItem('userData');
