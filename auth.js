@@ -2,6 +2,19 @@ const AUTH_ENDPOINT = '<?!= deploymentUrl ?>';
 const TOKEN_REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
 const MAX_REFRESH_ATTEMPTS = 3;
 
+
+
+console.log("=== CLIENT SESSION ===");
+console.log("Auth.getToken():", Auth.getToken());
+console.log("Auth.getUser():", Auth.getUser());
+console.log("sessionStorage:", {
+  authToken: sessionStorage.getItem('authToken'),
+  userData: sessionStorage.getItem('userData')
+});
+console.log("URL Token:", new URLSearchParams(window.location.search).get('token'));
+
+
+
 class Auth {
   static init() {
     // Clean URL if it contains token
@@ -41,21 +54,27 @@ class Auth {
     });
   }
 
-  static getToken() {
-    // Always prefer sessionStorage over URL token
-    const storedToken = sessionStorage.getItem('authToken');
-    if (storedToken) return storedToken;
-    
-    // Fallback to URL token
-    const urlToken = new URLSearchParams(window.location.search).get('token');
-    if (urlToken) {
-      sessionStorage.setItem('authToken', urlToken);
-      this._cleanUrl();
-      return urlToken;
-    }
-    
-    return null;
+static getToken() {
+  // Debug current state
+  console.log("Token check - URL:", window.location.search);
+  console.log("Token check - Storage:", sessionStorage.getItem('authToken'));
+  
+  // 1. Check URL first (critical for initial load)
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlToken = urlParams.get('token');
+  
+  // 2. If URL has token, store it and clean URL
+  if (urlToken) {
+    console.log("Found URL token, storing...");
+    sessionStorage.setItem('authToken', urlToken);
+    sessionStorage.setItem('lastTokenUpdate', Date.now());
+    this._cleanUrl();
+    return urlToken;
   }
+  
+  // 3. Fallback to sessionStorage
+  return sessionStorage.getItem('authToken');
+}
 
   static getUser() {
     const userData = sessionStorage.getItem('userData');
