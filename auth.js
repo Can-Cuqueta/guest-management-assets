@@ -56,7 +56,13 @@ static getToken() {
 
   console.log ('---------- IN auth.js, getToken  --------');
   
-  
+
+  // 1. Check for injected token first
+  if (window._initialToken) {
+    sessionStorage.setItem('authToken', window._initialToken);
+    delete window._initialToken;
+  }
+
   // 1. Log raw values WITHOUT method calls
   const debugData = {
     urlToken: new URLSearchParams(window.location.search).get('token'),
@@ -65,6 +71,7 @@ static getToken() {
   };
   
   console.table(debugData);
+  
 
   // 2. Original logic (unchanged)
   const urlToken = debugData.urlToken; // Reuse from debug
