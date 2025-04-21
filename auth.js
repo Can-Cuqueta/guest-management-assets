@@ -64,7 +64,7 @@ class Auth {
 
 static getToken() {
 
-  console.log ('---------- IN auth.js, getToken  --------');
+  console.log ('---------- IN auth.js, getToken  +--------');
   
 
   // 1. Check for injected token first
