@@ -205,10 +205,12 @@ static logState(context = '') {
         window.location.search.replace(/([&?])token=[^&]*(&?)/i, (_, p1, p2) => 
           p2 ? p1 : ''
         );
+
+      console.log ('---------- IN auth.js, cleanUrl: ' +  cleanUrl + '--------');
+
       history.replaceState(null, '', cleanUrl);
     }
 
-    console.log ('---------- IN auth.js, cleanUrl: ' +  cleanUrl + '--------');
 
     
   }
