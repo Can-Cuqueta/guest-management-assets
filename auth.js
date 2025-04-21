@@ -69,6 +69,7 @@ static getToken() {
 
   // 1. Check for injected token first
   if (window._initialToken) {
+      
     sessionStorage.setItem('authToken', window._initialToken);
     delete window._initialToken;
   }
@@ -86,13 +87,18 @@ static getToken() {
   // 2. Original logic (unchanged)
   const urlToken = debugData.urlToken; // Reuse from debug
   if (urlToken) {
-    console.log("Storing URL token...");
+
+    console.log ('---------- IN auth.js, gettoken(), Storing URL token...'--------');
+
     sessionStorage.setItem('authToken', urlToken);
     sessionStorage.setItem('lastTokenUpdate', Date.now());
     this._cleanUrl();
     return urlToken;
   }
-  
+
+  console.log ('---------- IN auth.js, gettoken(), return debugData.storedToken: ' + debugData.storedToke + ' --------');
+
+
   return debugData.storedToken; // Reuse from debug
 }
 
@@ -191,6 +197,9 @@ static logState(context = '') {
   }
 
   static _cleanUrl() {
+
+    console.log ('---------- IN auth.js, cleanUrl()  --------');
+
     if (history.replaceState && window.location.search.includes('token=')) {
       const cleanUrl = window.location.pathname + 
         window.location.search.replace(/([&?])token=[^&]*(&?)/i, (_, p1, p2) => 
@@ -198,6 +207,10 @@ static logState(context = '') {
         );
       history.replaceState(null, '', cleanUrl);
     }
+
+    console.log ('---------- IN auth.js, cleanUrl: ' +  cleanUrl + '--------');
+
+    
   }
 
   static debug() {
