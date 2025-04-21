@@ -88,7 +88,7 @@ static getToken() {
   const urlToken = debugData.urlToken; // Reuse from debug
   if (urlToken) {
 
-    console.log ('---------- IN auth.js, gettoken(), Storing URL token...'--------');
+    console.log ('---------- IN auth.js, gettoken(), Storing URL token...' + ' --------');
 
     sessionStorage.setItem('authToken', urlToken);
     sessionStorage.setItem('lastTokenUpdate', Date.now());
