@@ -14,11 +14,17 @@ class Auth {
     
     
     if (window.location.search.includes('token=')) {
+
+      console.log ('token= is true, call cleanUrl()');
+        
       this._cleanUrl();
     }
     
     // Initialize heartbeat if token exists
     if (this.getToken()) {
+        
+      console.log ('this.getToken() is true, call _startHeartbeat()');
+        
       this._startHeartbeat();
     }
     
