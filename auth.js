@@ -69,8 +69,11 @@ static getToken() {
 
   // 1. Check for injected token first
   if (window._initialToken) {
-      
+
+    console.log ('---------- IN auth.js, gettoken(), Check for injected token first...' + ' --------');
+
     sessionStorage.setItem('authToken', window._initialToken);
+    
     delete window._initialToken;
   }
 
@@ -85,7 +88,9 @@ static getToken() {
   
 
   // 2. Original logic (unchanged)
+  
   const urlToken = debugData.urlToken; // Reuse from debug
+  
   if (urlToken) {
 
     console.log ('---------- IN auth.js, gettoken(), Storing URL token...' + ' --------');
